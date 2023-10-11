@@ -12,18 +12,19 @@ import {
 import { AiOutlineSearch } from 'react-icons/ai';
 
 const PhonebookSchema = Yup.object().shape({
-  searchQuery: Yup.string().min(2).required('Enter serach query'),
+  query: Yup.string().min(2).required('Enter serach query'),
 });
 
 export const Searchbar = ({ onSubmit }) => (
   <SearchbarWrapper>
     <Formik
       initialValues={{
-        searchQuery: '',
+        query: '',
       }}
       validationSchema={PhonebookSchema}
       onSubmit={(values, actions) => {
-        onSubmit(values);
+        console.log(values);
+        onSubmit(values.query);
         actions.resetForm();
       }}
     >
@@ -37,7 +38,7 @@ export const Searchbar = ({ onSubmit }) => (
 
         <SearchFormInput
           type="text"
-          name="searchQuery"
+          name="query"
           placeholder="Search images and photos"
         />
         <ErrorMessage name="searchQuery" component={ErrorMessageWrapper} />
