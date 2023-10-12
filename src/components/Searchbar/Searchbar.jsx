@@ -23,7 +23,6 @@ export const Searchbar = ({ onSubmit }) => (
       }}
       validationSchema={PhonebookSchema}
       onSubmit={(values, actions) => {
-        console.log(values);
         onSubmit(values.query);
         actions.resetForm();
       }}

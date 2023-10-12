@@ -8,12 +8,10 @@ export class ImageGalleryItem extends Component {
   };
 
   openModal = () => {
-    console.log('Opening Modal');
     this.setState({ isModalOpen: true });
   };
 
   closeModal = () => {
-    console.log('Closing Modal');
     this.setState({ isModalOpen: false });
   };
 
