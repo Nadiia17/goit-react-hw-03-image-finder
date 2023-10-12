@@ -96,7 +96,7 @@ export class ImageGalleryItem extends Component {
   render() {
     const { image } = this.props;
     const { isModalOpen } = this.state;
-
+    console.log(this.state);
     return (
       <>
         <GalleryImage

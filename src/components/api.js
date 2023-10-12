@@ -11,6 +11,19 @@ export const searchByQuery = async (query, page = 1) => {
     per_page: 12,
     page,
   };
-  const response = await axios.get('', { params });
-  return response.data;
+  //   const response = await axios.get('', { params });
+  //   return response.data;
+  // };
+
+  try {
+    const response = await axios.get('', { params });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data: ', error);
+    console.error(
+      'Error details: ',
+      error.response?.data || error.message || error
+    );
+    throw error;
+  }
 };
